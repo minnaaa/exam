@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #slider {display: flex;}
+  </style>
+</head>
+<body>
+  <div>
+    <img id="slider" width="400px">
+    <button onclick="prev()">&lt;&lt;&lt;</button>
+    <button onclick="next()">&gt;&gt;&gt;</button>
+  </div>
+  <script>
+    index=0;
+    const images = ['cat1.jpg', 'cat2.jpg', 'cat3.jpg'];
+    const image = document.querySelector('#slider');
+    image.setAttribute('src', images[index]);
+    function prev() { index--;
+      if (index<0){index=2;}
+        image.setAttribute('src', images[index]); }
+    function next() { index++;
+      if (index>2){index=0;}
+        image.setAttribute('src', images[index]); }
+      
+  </script>
+</body>
+</html>
